@@ -70,8 +70,16 @@ class Recibo(models.Model):
 
 class Funcionario(models.Model):
     nomefuncionario = models.CharField(max_length=100)
-    cargofuncionario = models.CharField(max_length=50)
+    
     ordensdeservico = models.ManyToManyField(OrdemDeServico)
+
+    CARGO_FUNCIONARIO_CHOICES = [
+        ('ATENDENTE', 'Atendente'),
+        ('MECANICO', 'Mecanico'),
+        ('MECANICO ATENDENTE', 'Mecanico atendente')
+    ]
+    cargofuncionario = models.CharField(max_length=18, choices=CARGO_FUNCIONARIO_CHOICES)
+
 
     def __str__(self):
         return f"{self.nomefuncionario} ({self.cargofuncionario})"
@@ -123,4 +131,3 @@ class Caminhao(Veiculo):
 
     def __str__(self):
         return f"Caminhão - {self.PlacaVeiculo}"
-

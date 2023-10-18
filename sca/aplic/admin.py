@@ -45,8 +45,7 @@ class FuncionarioAdmin(admin.ModelAdmin):
     search_fields = ['nome funcionario']
 
 
-class CargoAdmin(admin.ModelAdmin):
-    list_display = ['nome cargo']
+
 
 class PecaAdmin(admin.ModelAdmin):
     list_display = ['Tipo Peca', 'Marca Peca', 'Modelo Peca', 'Estoque Atual', 'Preco Compra', 'Preco Venda Final']
@@ -71,8 +70,6 @@ class MotoAdmin(admin.ModelAdmin):
 
 class CaminhaoAdmin(admin.ModelAdmin):
     list_display = ['Tipo Veiculo', 'Placa Veiculo', 'AnoVeiculo', 'capacidade']
-
-
 
 
 
